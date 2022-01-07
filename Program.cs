@@ -1,25 +1,28 @@
 ﻿using System;
 
-namespace ConsoleApp2
+namespace ConsoleApp6
 {
     class Program
     {
         static void Main(string[] args)
         {
-            bool isOk = IsValidEmail("mma @gma.com");
-            Console.WriteLine(isOk);
-        }
-        static bool IsValidEmail(string email)
-        {
-            try
+            public static string FirstCharToUpper(this string input)
             {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
+                var result = input.First().ToString().ToUpper() + input.Substring(1);
+                return result;
             }
-            catch
             {
-                return false;
+
+                Console.WriteLine("Please enter a word");
+
+                string word = Console.ReadLine();
+
+                Console.WriteLine(FirstCharToUpper(word));
+
+                Console.WriteLine("Please enter a sentence");
+
+                string sentence = Console.ReadLine();
+
             }
         }
-    }
 }
